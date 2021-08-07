@@ -70,8 +70,7 @@ const useStyles = makeStyles((theme) => ({
       },
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
-        textAlign:"left !important",
-        minWidth: "120px",
+        textAlign:"left !important"
       },
     iconstyle: {
         width: "30px",
