@@ -1,0 +1,450 @@
+.navMenu a{
+   text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+}
+
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+   margin: auto;
+}
+
+#education{
+   width: 100% !important;
+   height: 100% !important;
+   border-radius: 0px !important;
+}
+
+.alert-enter {
+   opacity: 0;
+   transform: scale(0.9);
+ }
+ .alert-enter-active {
+   opacity: 1;
+   transform: translateX(0);
+   transition: opacity 300ms, transform 300ms;
+ }
+ .alert-exit {
+   opacity: 1;
+ }
+ .alert-exit-active {
+   opacity: 0;
+   transform: scale(0.9);
+   transition: opacity 300ms, transform 300ms;
+ }
+
+#home {
+    position: relative;
+    height: 600px;
+    min-height: 500px;
+    width: 100%;
+    background: #161415 url(../files/bg-header.png) no-repeat top center;
+    background-size: cover !important;
+     -webkit-background-size: cover !important;
+    text-align: center;
+    overflow: hidden;
+ }
+ 
+#about {
+   position: relative;
+   height: 600px;
+   min-height: 250px;
+   width: 100%;
+   background: #161415 url(../files/sec.png) no-repeat top center;
+   background-size: cover !important;
+    -webkit-background-size: cover !important;
+   text-align: center;
+   overflow: hidden;
+}
+
+#skills {
+   position: relative;
+   height: 850px;
+   min-height: 250px;
+   width: 100%;
+   background: #161415 url(../files/sec.png) no-repeat top center;
+   background-size: cover !important;
+    -webkit-background-size: cover !important;
+   text-align: center;
+   overflow: hidden;
+}
+
+#contact {
+   position: relative;
+   height: 700px;
+   min-height: 250px;
+   width: 100%;
+   background: #161415 url(../files/sec.png) no-repeat top center;
+   background-size: cover !important;
+    -webkit-background-size: cover !important;
+   text-align: center;
+   overflow: hidden;
+}
+
+ #img_container {
+   position: relative;
+   height: 700px;
+   min-height: 500px;
+   width: 100%;
+   background: #161415 url(../files/bg-header.png) no-repeat top center;
+   background-size: cover !important;
+    -webkit-background-size: cover !important;
+   text-align: center;
+   overflow: hidden;
+}
+
+ /* vertically center banner section */
+header:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+ }
+ header .banner {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    width: 85%;
+    padding-bottom: 30px;
+    text-align: center;
+ }
+
+ .MuiTab-wrapper {
+   align-items: baseline !important;
+   display: -webkit-box !important;
+}
+ 
+ header .banner-text { width: 100%; }
+ header .banner-text h1 {
+    font: 90px/1.1em 'opensans-bold', sans-serif;
+    color: #fff;
+    letter-spacing: -2px;
+    margin: 0 auto 18px auto;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: 
+               typing 0.3s steps(7, end),
+               blink-caret .9s step-end infinite;
+   width: 177px;
+ }
+
+
+ @keyframes typing{
+    from {width:0}
+    to {width: 177px}
+ }
+
+ @keyframes glow {
+   0% { color:#ffa93a; }
+   50% { color: #ff7b3a }
+   100% { color: #ffa93a; }
+}
+
+ @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% {border-color: orange; }
+ }
+
+ header .banner-text h3 {
+    color: #4a4a4a;
+    margin: 0 auto;
+    width: 70%;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+    font-size:23px;
+ }
+ h3 {
+   animation: fadeIn 0.5s;
+   -webkit-animation: fadeIn 0.5s;
+   -moz-animation: fadeIn 0.5s;
+   -o-animation: fadeIn 0.5s;
+   -ms-animation: fadeIn 0.5s;
+}
+span {
+   color: #fff;
+   animation: fadeIn 1s;
+ -webkit-animation: fadeIn 1s;
+ -moz-animation: fadeIn 1s;
+ -o-animation: fadeIn 1s;
+ -ms-animation: fadeIn 1s;
+}
+
+ header .banner-text hr {
+    width: 60%;
+    margin: 18px auto 24px auto;
+    border-color: #2F2D2E;
+    border-color: rgba(150, 150, 150, .1);
+ }
+ 
+ /* header social links */
+ header .social {
+    margin: 24px 0;
+    padding: 0;
+    font-size: 30px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
+ }
+ header .social li {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 0;
+ }
+#infotext {
+   margin-top:1px;
+}
+
+ header .social li a { color: #fff; }
+ header .social li a:hover { color: #ffc376; }
+ 
+ /* scrolldown link */
+ header .scrolldown a {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -29px;
+    color: #fff;
+    display: block;
+    height: 42px;
+    width: 42px;
+    font-size: 42px;
+    line-height: 42px;
+    color: #fff;
+    border-radius: 100%;
+ 
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+ }
+ header .scrolldown a:hover { color: #ffc376; }
+ .MuiAppBar-colorDefault {
+   color: rgba(0, 0, 0, 0.87);
+   background-color: #f5f5f5e0 !important;
+}
+
+#menuicon{
+   display:none !important;
+}
+
+.MuiContainer-root {
+   padding-left: 24px;
+   padding-right: 24px;
+   margin-top: 5%;
+}
+
+.MuiContainer-maxWidthLg {
+   max-width: 1560px !important;
+}
+
+#aboutheader {
+   font: 54px/1.1em 'opensans-bold', sans-serif;
+   color: #ffa93a;
+   letter-spacing: -2px;
+   margin: 0 auto 18px auto;
+   text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+   overflow: hidden;
+   white-space: nowrap;
+   margin: 0 auto;
+   margin-top: 0px;
+   animation: glow 3s infinite;
+   width: 195px;
+   margin-top: -17px;
+   margin-bottom: 40px;
+   height: 55px;
+}
+
+#contactheader {
+   font: 54px/1.1em 'opensans-bold', sans-serif;
+   color: #ffa93a;
+   letter-spacing: -2px;
+   margin: 0 auto 18px auto;
+   text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+   overflow: hidden;
+   white-space: nowrap;
+   margin: 0 auto;
+   margin-top: 0px;
+   animation: glow 3s infinite;
+   width: 195px;
+   margin-top: -17px;
+   margin-bottom: 40px;
+   height: 55px;
+}
+
+mark {
+   background-color: #ffc376;
+}
+
+.MuiLinearProgress-buffer {
+   height: 20px !important;
+   border-radius: 10px !important;
+   width: 178px !important;
+   margin-left: 105px;
+   margin-top: -27px;
+}
+
+.MuiLinearProgress-barColorPrimary {
+   background-color: #fd8e00 !important;
+}
+
+.MuiDivider-light {
+   background-color: rgba(255, 195, 118, 0.51) !important;
+}
+
+.makeStyles-infotext-4::-webkit-scrollbar {
+   width: 0;  /* Remove scrollbar space */
+   background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.MuiFormLabel-root {
+   color:#ffa93a !important;
+}
+
+.MuiTab-labelIcon {
+   min-height: 55px !important;
+}
+
+.PrivateTabIndicator-vertical-27 {
+   background-color: #fd8e00 !important;
+}
+
+.MuiTab-textColorInherit.Mui-selected {
+   background-color: #fd8e00 !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+   border-color: rgba(0, 0, 0, 0.65);
+}
+#mobileskills{
+background-color: #474d4e;
+}
+#skillsmenu {
+   display:none !important;
+} 
+
+@media screen and (max-width: 1230px) {
+
+   #about {
+      height: 880px;
+   }
+
+   .MuiGrid-spacing-xs-3 > .MuiGrid-item {
+      padding: 12px;
+      display: inline-table;
+  }
+
+}
+
+
+@media screen and (max-width: 1000px) {
+
+   #skillsmenu {
+      display:inline-block !important;
+   } 
+   .MuiTabs-scrollable {
+      display: none !important;
+  }
+  .makeStyles-tabs-10 {
+   min-width: 0 !important;
+}
+
+.makeStyles-paper-9 {
+   min-height: 700px !important;
+}
+
+.makeStyles-exampletext-19 {
+   display: grid !important;
+   padding-top: 50px;
+}
+
+.makeStyles-boot-20  {
+   width: "" !important;
+   margin: "" !important;
+   margin-top: "0px" !important;
+}
+
+}
+
+@media screen and (max-width: 708px) {
+
+   #exampleinput {
+      margin-top: 0px !important;
+  }
+  .makeStyles-boot-20 > * {
+   margin-top: 0px !important;
+}
+}
+
+@media screen and (max-width: 671px) {
+   #about {
+      height: 1600px;
+   }
+   #skillsmenu {
+      display:inline-block !important;
+   } 
+   #tabs {
+      display: none !important;
+   }
+}
+
+@media screen and (max-width: 640px) {
+   #about {
+      position: relative;
+      height: 1600px;
+      min-height: 250px;
+      width: 100%;
+      background-size: cover !important;
+       -webkit-background-size: cover !important;
+      text-align: center;
+      overflow: hidden;
+   }
+
+   #menuicon {
+      display:inline-block !important;
+   } 
+   
+   .navMenu li {
+      display: none !important;
+  }
+
+   .MuiGrid-spacing-xs-3 > .MuiGrid-item {
+      padding: 12px;
+      display: inline-table;
+      overflow: visible;
+}
+#skillsmenu {
+   display:inline-block !important;
+} 
+#tabs {
+   display: none !important;
+}
+}
+
+@media screen and (max-width: 616px) {
+   .makeStyles-root-37 > * {
+      width: 100% !important;
+      margin: 8px;
+      position: relative;
+      max-width: 500px !important;
+  }
+}
+
+@media screen and (max-width: 455px) {
+
+#about {
+   position: relative;
+   height: 1600px;
+   min-height: 250px;
+   width: 100%;
+   background-size: cover !important;
+    -webkit-background-size: cover !important;
+   text-align: center;
+   overflow: hidden;
+}
+
+li.MuiImageListItem-root {
+   width: 106% !important;
+}
+
+#aboutheader, #contactheader{
+   margin-top: 0px !important;
+}
+}
+
