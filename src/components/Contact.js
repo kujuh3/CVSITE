@@ -87,6 +87,7 @@ function Contact() {
           }, (error) => {
               console.log(error.text);
           });
+        return(alert("Message sent!"))
     }
 
   return (
