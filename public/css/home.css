@@ -342,7 +342,8 @@ background-color: #474d4e;
       display: none !important;
   }
   .makeStyles-tabs-10 {
-   min-width: 0 !important;
+   min-width: 0px !important;
+   width: 0px !important;
 }
 
 .makeStyles-paper-9 {
