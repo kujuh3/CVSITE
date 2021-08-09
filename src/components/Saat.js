@@ -4,7 +4,8 @@ import { useState} from "react";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import {TextField, Button, Typography} from '@material-ui/core';
-
+import CircularProgress from '@material-ui/core/CircularProgress';
+import axios from "axios";
 
 
 //varoitusta varten tietojen haku
@@ -21,7 +22,6 @@ const useStyles = makeStyles({
       },
     teksti: {
         display: "inline",
-        marginLeft: "10px",
         color: "#fd8e00",
     },
       boot: {
@@ -56,7 +56,8 @@ const useStyles = makeStyles({
 
 //funktiolla props jonka kautta haun teko
 function Saat(props){
-    const [haettava, setHaettava] = useState("seinajoki");
+    const [loading, setLoading] = useState(true);
+    const [haettava, setHaettava] = useState("");
     const tyylit = useStyles();
     const [hakeminen, setHakeminen] = useState("seinajoki");
     //ääkkösien määrääminen vertausta varten
@@ -68,12 +69,12 @@ function Saat(props){
         }
     );
     function haku(){
+        setLoading(false);
         let str = haettava;
         //vanhan tyylin ääkkösmuutos - lähes copypaste vanhasta tehtävästä
         str = str.replace(/ä|ö|å/gi, function(matched){
           return umlauts[matched];
         })                           
-        setHakeminen(str)
         haeTiedot(str);
     }
 
@@ -96,36 +97,48 @@ const [data, setData] = useState({
     setOpen(false);
     };
 
+    function onKeyDownHandler (e) {
+      if (e.keyCode === 13) {
+        haku()
+      }
+    };
+
 //haetaan tiedot ja katsotaan virhe
 const haeTiedot = async (hakua) => {
-
-    const yhteys = await fetch(`https://so3server.herokuapp.com/saatilanne/${hakua}`);
-    const tiedot = await yhteys.json();
-
-        //tähän meni ***** kauan löytää syy - catch ei tunnista 404 koodeja, sillä periaaatteessa
-        //ne eivät ole yhteysvirheitä
-        //joten verrataan iffillä jos tullut 404  ja jos ei niin jatketaan
-        if (tiedot.cod == 404) {
-        setData({
+    try {
+      const data1 = await axios
+      .get(`https://so3server.herokuapp.com/saatilanne/${hakua}`)
+      .then(res =>{
+          console.log(res);
+          setData({
             ...data,
-            virhe : `Virhe: etsimääsi kaupunkia ei löytynyt.`,
-            tiedotHaettu : false
+            tiedot2 : [res.data.main],
+            nimi : res.data.name,
+            id : res.data.id,
+            virhe : null,
+            tiedotHaettu : true
             });
-            console.log(data)
-        }
-        else    {
+          if(res.data.cod==404){
             setData({
-                    ...data,
-                    tiedot2 : [tiedot.main],
-                    nimi : tiedot.name,
-                    id : tiedot.id,
-                    virhe : null,
-                    tiedotHaettu : true
-                    });
-        }
-    console.log(data.tiedot2)
-}   //useeffectillä päivitys ja seurataan hakusyötön muuttujaa
+              ...data,
+              virhe : true,
+              tiedotHaettu : false
+              });
+          }
+      });
+      setLoading(true);
 
+    } catch (e) {
+      setLoading(true);
+      setData({
+        ...data,
+        virhe : true,
+        tiedotHaettu : false
+        });
+      console.log(e)
+    }
+  };
+    
     return (
     <>
     <TextField 
@@ -133,24 +146,39 @@ const haeTiedot = async (hakua) => {
             placeholder="Ex.. Helsinki" 
             className={tyylit.boot}
             onChange={(e) => {setHaettava(e.target.value)}}
+            onKeyDown={(e) => {onKeyDownHandler(e)}}
         />
         <Button variant="contained" className={tyylit.chip} onClick={ () => {haku()}}
             >OK</Button>
     {(data.virhe)
     ?    <><Snackbar open={open} autoHideDuration={9000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="error">
-                Virhe: etsimääsi kaupunkia ei löytynyt!
+                Error: Couldn't find city!
                 </Alert>
             </Snackbar>
       </>
 
-    :   <>
-    {data.tiedot2.map((tieto) => {
-    return ( <>              
-            <Typography className={tyylit.teksti} variant="h4">Temperature: {tieto.temp}°C</Typography>       
-            </> 
-            );
-    })}</>
+    :   <></>}
+    {(data.virhe)
+    ?    <><Snackbar open={open} autoHideDuration={9000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="error">
+                Error: Couldn't find city!
+                </Alert>
+            </Snackbar>
+         </>
+
+    : <>{(loading) 
+      ? 
+      <>{data.tiedot2.map((tieto) => {
+      return ( <><td/>
+              <Typography className={tyylit.teksti} variant="h4">{data.nimi}: {tieto.temp}°C</Typography>       
+              </> 
+              );
+      })
+      }</>
+    : <><CircularProgress color="orange"/></>
+    }
+    </>
     }
     </>
     );
