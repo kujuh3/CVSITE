@@ -419,9 +419,13 @@ background-color: #474d4e;
 }
 
 @media screen and (max-width: 616px) {
-   .makeStyles-root-37 > * {
+   #nimi {
       width: 100% !important;
-      margin: 8px;
+      position: relative;
+      max-width: 500px !important;
+  }
+   #sposti {
+      width: 100% !important;
       position: relative;
       max-width: 500px !important;
   }
