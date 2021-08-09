@@ -419,12 +419,7 @@ background-color: #474d4e;
 }
 
 @media screen and (max-width: 616px) {
-   #nimi {
-      width: 100% !important;
-      position: relative;
-      max-width: 500px !important;
-  }
-   #sposti {
+   .jss36 > * {
       width: 100% !important;
       position: relative;
       max-width: 500px !important;
