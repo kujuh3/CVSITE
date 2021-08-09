@@ -115,12 +115,10 @@ const useStyles = makeStyles((theme) => ({
         height:"180px"
       },
       exampletext: {
-          paddingTop: "50px",
-          display: "flex"
+          paddingTop: "50px"
       },
       boot: {
         '& > *': {
-          margin: theme.spacing(1),
           width: '25ch',
           overFlow: "hidden",
           marginTop: "-30px"
@@ -149,7 +147,6 @@ const useStyles = makeStyles((theme) => ({
       },
       link : {
           color: "#ffa93a",
-          marginLeft: "5px"
       },
       chip: {
         margin: theme.spacing(0.5),
