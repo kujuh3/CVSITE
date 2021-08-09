@@ -120,8 +120,7 @@ const useStyles = makeStyles((theme) => ({
       boot: {
         '& > *': {
           width: '25ch',
-          overFlow: "hidden",
-          marginTop: "-30px"
+          overFlow: "hidden"
         },
         "& .MuiOutlinedInput-root.Mui-focused": {
           color: "#d4d4d4"
