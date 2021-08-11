@@ -20,7 +20,10 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     backgroundColor: "#242128a8",
     minHeight: "333.967px",
-    minWidth: "300px"
+    minWidth: "300px",
+    borderColor: "#fd8e00",
+    borderWidth: "2px",
+    borderStyle: "solid"
   },
   largepic: {
     width: theme.spacing(14),
