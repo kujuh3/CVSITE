@@ -290,8 +290,8 @@ function Skills() {
             <Saat/>
 
             <Typography variant="h5" className={classes.infotitle}>Backend and middleware</Typography>
-            <Typography >Dabbling with backend and middleware.</Typography><td/>
-            <Typography >I've tested working with MERN stack with 2 projects. Which I would say I'm not in any shape or form really familiar with.</Typography><td/>
+            <Typography >Experience with backend and middleware.</Typography><td/>
+            <Typography >I've had two projects that include a full MERN stack. Outside of those projects experience, I have experience with backend, middleware and databases.</Typography><td/>
             <Typography >These projects have included working with:</Typography>
             <List>
                 <ListItem>
