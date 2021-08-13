@@ -12,8 +12,8 @@ function Info() {
             <div id="infotext">
             <Divider/>
             <h3>My name is <span>Juho</span></h3>
-            <h3>I'm a <span>Front-end </span>developer</h3>
-            <h3>Meddling with <span>Fullstack</span> development, and <span>improvement</span> in mind.</h3>
+            <h3>I'm a <span>Full stack </span>web-developer</h3>
+            <h3>Temporary <span>front-end</span> focus, and <span>improvement</span> in mind.</h3>
             <Divider/>
             </div>
             </div>
