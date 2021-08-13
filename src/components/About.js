@@ -100,7 +100,7 @@ function About() {
                 <Typography variant="h5" className={classes.infotitle}>Code experience</Typography>
                 </Zoom>
                 <Zoom timeout={650} in={text.text1}>
-                <Typography variant="h6" className={classes.infotextcontent}>My coding experience is mainly focused towards front-end developing. Including most experience with <mark>React</mark>, <mark>JavaScript</mark> and <mark>Node</mark>. This naturally includes working with <mark>Javascript</mark>, <mark>HTML</mark> and <mark>CSS</mark>.</Typography>
+                <Typography variant="h6" className={classes.infotextcontent}>My coding experience is mainly focused towards front-end developing. Including most experience with <mark>React</mark>, <mark>JavaScript</mark> and <mark>Node</mark>. This naturally includes working with <mark>HTML</mark> and <mark>CSS</mark>.</Typography>
                 </Zoom>
                 <Zoom timeout={700} in={text.text1}>
                 <Typography variant="h5" className={classes.infotitle}>Goals</Typography>
